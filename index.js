@@ -10,10 +10,15 @@ function updateClock() {
     let ampm = "AM";
 
     if (h >= 12) {
+        ampm = "PM";
         if (h > 12) {
             h = h - 12;
         }
-        ampm = "PM";
+    }
+
+    // Convert hour '0' to '12' for 12-hour format
+    if (h === 0) {
+        h = 12;
     }
 
     h = h < 10 ? "0" + h : h;
